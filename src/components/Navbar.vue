@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <div v-if="standard" class="navbar--standard">
-      <div class="title">Ciao {{this.$store.state.name}}!</div>
+      <div class="title">Ciao {{$store.state.name}}!</div>
       <div class="action">
         <div class="info">
           <img @click="$emit('info')" src="img/icons/info.svg" alt />

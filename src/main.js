@@ -5,6 +5,9 @@ import VueRouter from "vue-router";
 import routes from "./routes.js";
 import store from "./store.js";
 import "./assets/style.scss";
+import VueCarousel from "@chenfengyuan/vue-carousel";
+
+Vue.use(VueCarousel);
 
 Vue.use(VueRouter);
 

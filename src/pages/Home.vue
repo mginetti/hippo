@@ -16,7 +16,6 @@ export default {
       this.$store.commit("addPoints", 10);
     },
     gameWords() {
-      console.log("ciaoo");
       this.$route.push({ name: "game-words" });
     }
   },
