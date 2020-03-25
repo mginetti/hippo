@@ -1,17 +1,25 @@
 <template>
   <div class="splash">
-    <carousel :data="data" :controls="false" indicator-type="disc"></carousel>
+    <carousel
+      :data="data"
+      :controls="false"
+      :autoplay="false"
+      interval="5000"
+      indicator-type="disc"
+    ></carousel>
   </div>
 </template>
 
 <script>
 import Splash1 from "../components/Splash1";
 import Splash2 from "../components/Splash2";
+import Splash3 from "../components/Splash3";
+import Login from "../components/Login";
 export default {
   name: "Splash",
   data() {
     return {
-      data: [Splash1, Splash2]
+      data: [Splash1, Splash2, Splash3, Login]
     };
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <navbar standard></navbar>
     <router-link :to="{name: 'game-words'}">
       <card title="Lettere" img="lettere"></card>
@@ -26,5 +26,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.home {
+  padding-left: 25px;
+  padding-right: 25px;
+  a {
+    text-decoration: unset;
+    color: #405b84;
+    font-weight: 600;
+  }
+}
 </style>

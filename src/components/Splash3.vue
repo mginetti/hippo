@@ -1,14 +1,16 @@
 <template>
-  <div class="splash-2">
+  <div class="splash-3">
     <div class="image">
-      <img src="img/splash-2.jpg" alt />
+      <img src="img/cards.svg" alt />
     </div>
     <div class="text">
       <h3>
-        Qui tu puoi trovare
-        <br />fantastici minigiochi
-        <br />per imparare cos'è la
-        <br />dislessia
+        La nostra app
+        <br />contiene tre
+        <br />categorie:
+        <br />forme
+        <br />lettere
+        <br />numeri
       </h3>
     </div>
   </div>
@@ -21,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-.splash-2 {
+.splash-3 {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,9 +38,10 @@ export default {
   }
   .image {
     width: 100%;
-    margin-bottom: 50px;
+    max-height: 40vh;
     text-align: center;
     img {
+      height: 80%;
       width: 80%;
     }
   }

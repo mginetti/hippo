@@ -14,7 +14,11 @@ export default {
       });
     }
   },
-
+  mounted() {
+    if (!this.$store.state.name) {
+      this.$router.push({ name: "splash" });
+    }
+  },
   methods: {
     async accept() {
       this.showUpgradeUI = false;
