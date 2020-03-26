@@ -34,6 +34,7 @@ export default {
     flex-basis: 30%;
     display: flex;
     align-items: center;
+    margin-top: 9%;
     img {
       height: 250%;
       width: 250%;
