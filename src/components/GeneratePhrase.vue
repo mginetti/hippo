@@ -28,7 +28,7 @@ export default {
 <style lang="scss">
 .generate-phrase {
   display: flex;
-  max-height: 100px;
+  min-height: 25%;
   margin-bottom: 50px;
   &--panda {
     flex-basis: 30%;
@@ -42,20 +42,33 @@ export default {
   }
   &--fumetto {
     flex-basis: 70%;
+    display: flex;
+    align-items: center;
     p {
       position: relative;
       padding-right: 16%;
       padding-left: 14%;
+      top: -8%;
       font-size: 18px;
     }
-    p::before {
-      content: url("../assets/fumetto.svg");
-      position: absolute;
-      top: -28px;
-      left: 0;
-      width: 100%;
-      z-index: -1;
+    @media only screen and (min-width: 40em) {
+      p {
+        top: -12%;
+        font-size: 25px;
+      }
     }
+    @media only screen and (min-width: 49em) {
+      p {
+        top: -12%;
+        font-size: 35px;
+      }
+    }
+  }
+  &--fumetto::before {
+    content: url("../assets/fumetto.svg");
+    position: absolute;
+    width: 70%;
+    z-index: -1;
   }
 }
 </style>

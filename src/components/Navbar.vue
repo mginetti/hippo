@@ -1,14 +1,17 @@
 <template>
   <div class="navbar">
     <div v-if="standard" class="navbar--standard">
-      <div class="title">Ciao {{$store.state.name}}!</div>
+      <div class="title">
+        <img src="img/hippo.png" alt />
+        Ciao {{$store.state.name}}!
+      </div>
       <div class="action">
-        <div class="info">
-          <img @click="$emit('info')" src="img/icons/info.svg" alt />
-        </div>
-        <div class="mascotte">
-          <img @click="emit('mascotte')" src="img/icons/paw.svg" alt />
-        </div>
+        <router-link :to="{name: 'info'}" class="info">
+          <img src="img/icons/info.svg" alt />
+        </router-link>
+        <router-link :to="{name: 'mascottes'}" class="mascotte">
+          <img src="img/icons/paw.svg" alt />
+        </router-link>
       </div>
     </div>
     <div v-if="game" class="navbar--game">
@@ -31,7 +34,7 @@ export default {
 
 <style lang="scss">
 .navbar {
-  height: 5vh;
+  height: 6vh;
   width: 100%;
   margin-bottom: 10px;
   &--standard {
@@ -40,7 +43,14 @@ export default {
     height: 100%;
     align-items: center;
     .title {
+      height: 100%;
       width: 60%;
+      display: flex;
+      align-items: center;
+      img {
+        height: 100%;
+        margin-right: 10px;
+      }
     }
     .action {
       width: 40%;

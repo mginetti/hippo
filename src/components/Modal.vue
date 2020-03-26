@@ -18,7 +18,7 @@ export default {
 <style lang="scss" >
 .modal {
   position: absolute;
-  width: 90%;
+  width: 95%;
   height: 90%;
   background-color: white;
   margin: auto;
@@ -33,6 +33,7 @@ export default {
     width: 100%;
     top: 50%;
     left: 50%;
+    height: 100%;
     transform: translate(-50%, -50%);
   }
 }

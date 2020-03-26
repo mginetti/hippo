@@ -4,12 +4,15 @@
     <span v-if="!finish" class="score">Punteggio: {{points}}</span>
     <generate-phrase class="phrase"></generate-phrase>
     <generate-word class="word" @input="setWord($event)" v-if="!finish" :key="refresh"></generate-word>
-    <generate-btn class="answer" @answer="checkAnswer($event)" v-if="currentWord && !finish" :word="currentWord"></generate-btn>
-    <modal v-if="finish">
+    <generate-btn
+      class="answer"
+      @answer="checkAnswer($event)"
+      v-if="currentWord && !finish"
+      :word="currentWord"
+    ></generate-btn>
+    <modal v-if="finish" class="modal-finish">
       <template>
-        <h2 class="punteggio">Punteggio</h2>
         <span class="score">{{score}}</span>
-        <h4>Record</h4>
         <span class="record">{{record}}</span>
         <div class="action">
           <div class="home">
@@ -23,12 +26,10 @@
         </div>
       </template>
     </modal>
-    <modal v-if="pause">
+    <modal v-if="pause" class="modal-pause">
       <template>
-        <h2>Punteggio</h2>
-        <span class="score">{{score}}</span>
-        <h4>Record</h4>
-        <span class="record">{{record}}</span>
+        <h3>PAUSA</h3>
+
         <div class="action">
           <div class="home">
             <router-link :to="{name: 'home'}">
@@ -114,42 +115,79 @@ export default {
 
 <style lang="scss">
 .game-words {
+  height: 100vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  .modal-pause {
+    background-image: url("../assets/back-pause.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h3 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      margin-top: 15%;
+      font-size: 45px;
+    }
+  }
+  .modal-finish {
+    background-image: url("../assets/back-finish.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .score {
+      position: absolute;
+      top: 40%;
+      left: 44%;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 45px;
+    }
+    .record {
+      position: absolute;
+      top: 62%;
+      left: 60%;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 45px;
+    }
+  }
   .score {
     margin-left: 10px;
     font-size: 25px;
     border-bottom: 50px;
   }
-  .word{
-   font-size: 27px;
+
+  .word {
+    font-size: 27px;
   }
-  
-  .phrase{
-    margin-top: 50px ;
+
+  .phrase {
+    margin-top: 50px;
   }
   .modal {
-    .score {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-      font-size: 45px; 
-    }
-    .record {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-      font-size: 25px;
-    }
     .action {
-      position: relative;
+      position: absolute;
       display: flex;
       height: 50px;
       margin-top: 50px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
       .home,
       .refresh {
-        flex-basis: 50%;
         height: 100%;
         img {
-          height: 150%;
+          height: 100%;
         }
       }
+    }
+  }
+  @media only screen and (min-width: 40em) {
+    .score,
+    .word {
+      font-size: 45px;
     }
   }
 }

@@ -1,6 +1,8 @@
 import Home from "./pages/Home";
 import GameWords from "./pages/GameWords";
 import Splash from "./pages/Splash";
+import Info from "./pages/Info";
+import Mascottes from "./pages/Mascottes";
 const routes = [
     {
         path: "/",
@@ -16,6 +18,16 @@ const routes = [
         path: "/splash",
         component: Splash,
         name: "splash"
+    },
+    {
+        path: "/info",
+        component: Info,
+        name: "info"
+    },
+    {
+        path: "/mascottes",
+        component: Mascottes,
+        name: "mascottes"
     }
 ];
 

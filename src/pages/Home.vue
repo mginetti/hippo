@@ -4,6 +4,8 @@
     <router-link :to="{name: 'game-words'}">
       <card title="Lettere" img="lettere"></card>
     </router-link>
+    <card title="Numeri" img="numeri" locked></card>
+    <card title="Forme" img="forme" locked></card>
   </div>
 </template>
 

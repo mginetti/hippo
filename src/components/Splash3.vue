@@ -6,8 +6,9 @@
     <div class="text">
       <h3>
         La nostra app
-        <br />contiene tre
-        <br />categorie:
+        contiene
+        <br />tre
+        categorie:
         <br />forme
         <br />lettere
         <br />numeri
@@ -40,8 +41,9 @@ export default {
     width: 100%;
     max-height: 40vh;
     text-align: center;
+    margin-bottom: 25px;
     img {
-      height: 80%;
+      height: 100%;
       width: 80%;
     }
   }

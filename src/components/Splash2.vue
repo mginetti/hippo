@@ -1,7 +1,7 @@
 <template>
   <div class="splash-2">
     <div class="image">
-      <img src="img/splash-2.jpg" alt />
+      <img src="img/splash-2.png" alt />
     </div>
     <div class="text">
       <h3>
