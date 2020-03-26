@@ -4,7 +4,7 @@
       :data="data"
       :controls="false"
       :autoplay="false"
-      interval="5000"
+      :interval="15000"
       indicator-type="disc"
     ></carousel>
   </div>
