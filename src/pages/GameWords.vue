@@ -2,12 +2,12 @@
   <div class="game-words">
     <navbar @pause="setPause()" game></navbar>
     <span v-if="!finish" class="score">Punteggio: {{points}}</span>
-    <generate-phrase></generate-phrase>
-    <generate-word @input="setWord($event)" v-if="!finish" :key="refresh"></generate-word>
-    <generate-btn @answer="checkAnswer($event)" v-if="currentWord && !finish" :word="currentWord"></generate-btn>
+    <generate-phrase class="phrase"></generate-phrase>
+    <generate-word class="word" @input="setWord($event)" v-if="!finish" :key="refresh"></generate-word>
+    <generate-btn class="answer" @answer="checkAnswer($event)" v-if="currentWord && !finish" :word="currentWord"></generate-btn>
     <modal v-if="finish">
       <template>
-        <h2>Punteggio</h2>
+        <h2 class="punteggio">Punteggio</h2>
         <span class="score">{{score}}</span>
         <h4>Record</h4>
         <span class="record">{{record}}</span>
@@ -117,12 +117,20 @@ export default {
   .score {
     margin-left: 10px;
     font-size: 25px;
+    border-bottom: 50px;
+  }
+  .word{
+   font-size: 27px;
+  }
+  
+  .phrase{
+    margin-top: 50px ;
   }
   .modal {
     .score {
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-      font-size: 45px;
+      font-size: 45px; 
     }
     .record {
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -139,7 +147,7 @@ export default {
         flex-basis: 50%;
         height: 100%;
         img {
-          height: 100%;
+          height: 150%;
         }
       }
     }

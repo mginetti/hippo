@@ -66,6 +66,7 @@ export default {
     border: unset;
     position: relative;
     margin-bottom: 50px;
+    font-size: 22px;
   }
   button::before {
     content: url("../assets/bordo.svg");

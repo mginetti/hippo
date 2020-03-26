@@ -35,8 +35,8 @@ export default {
     display: flex;
     align-items: center;
     img {
-      height: 110%;
-      width: 110%;
+      height: 250%;
+      width: 250%;
     }
   }
   &--fumetto {
@@ -45,6 +45,7 @@ export default {
       position: relative;
       padding-right: 16%;
       padding-left: 14%;
+      font-size: 18px;
     }
     p::before {
       content: url("../assets/fumetto.svg");
