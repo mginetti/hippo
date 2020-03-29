@@ -1,6 +1,6 @@
 <template>
   <div class="game-words">
-    <navbar @pause="setPause()" game></navbar>
+    <navbar @pause="setPause()" v-if="!pause && !finish" game></navbar>
     <span v-if="!finish" class="score">Punteggio: {{points}}</span>
     <generate-phrase class="phrase"></generate-phrase>
     <generate-word class="word" @input="setWord($event)" v-if="!finish" :key="refresh"></generate-word>
@@ -28,8 +28,10 @@
     </modal>
     <modal v-if="pause" class="modal-pause">
       <template>
+        <div class="back">
+          <img src="../assets/back-pause.png" alt />
+        </div>
         <h3>PAUSA</h3>
-
         <div class="action">
           <div class="home">
             <router-link :to="{name: 'home'}">
@@ -119,10 +121,17 @@ export default {
   padding-left: 10px;
   padding-right: 10px;
   .modal-pause {
-    background-image: url("../assets/back-pause.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    .back {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
     h3 {
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
@@ -166,12 +175,13 @@ export default {
     margin-top: 50px;
   }
   .modal {
+    box-shadow: 2px 0px 7px 3px rgb(71, 71, 71);
     .action {
       position: absolute;
       display: flex;
       height: 50px;
       margin-top: 50px;
-      bottom: 0;
+      bottom: 15px;
       left: 0;
       right: 0;
       justify-content: center;

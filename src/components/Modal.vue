@@ -19,7 +19,7 @@ export default {
 .modal {
   position: absolute;
   width: 95%;
-  height: 90%;
+  height: 95%;
   background-color: white;
   margin: auto;
   top: 0;
