@@ -36,6 +36,7 @@ export default {
 .navbar {
   height: 6vh;
   width: 100%;
+  margin-top: 10px;
   margin-bottom: 10px;
   &--standard {
     display: flex;

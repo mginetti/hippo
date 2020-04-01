@@ -3,34 +3,44 @@
     <router-link :to="{name: 'home'}">
       <img src="img/icons/home.svg" alt class="home" />
     </router-link>
-    <carousel
-      :data="data"
-      :controls="false"
-      :autoplay="false"
-      :interval="15000"
-      indicator-type="disc"
-    ></carousel>
+    <swiper ref="mySwiper" :options="swiperOptions">
+      <swiper-slide>
+        <penny />
+      </swiper-slide>
+      <swiper-slide>
+        <gracy />
+      </swiper-slide>
+      <swiper-slide>
+        <bubo />
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </div>
 </template>
 
 <script>
-import Penny from "../components/Penny";
-import Gracy from "../components/Gracy";
-import Bubo from "../components/Bubo";
 export default {
   name: "Mascottes",
   data() {
     return {
-      data: [Penny, Gracy, Bubo]
+      swiperOptions: {
+        pagination: {
+          el: ".swiper-pagination"
+        }
+        // Some Swiper option/callback...
+      }
     };
+  },
+  components: {
+    Gracy: () => import("../components/Gracy"),
+    Penny: () => import("../components/Penny"),
+    Bubo: () => import("../components/Bubo")
   }
 };
 </script>
 
 <style lang="scss">
 .mascottes {
-  color: #405b84;
-  height: calc(100vh - 81.6px);
   a {
     position: absolute;
     top: 10px;
@@ -45,25 +55,11 @@ export default {
       padding-right: 0;
     }
   }
-  .carousel {
-    min-height: 100%;
-    ul {
-      height: calc(100vh - 81.6px);
-      li {
-        height: calc(100vh - 81.6px);
-      }
-    }
-    .carousel__indicators {
-      bottom: 50px;
-      li {
-        margin: 0.3rem;
-      }
-      li::before {
-        height: 1rem;
-        width: 1rem;
-        border: 1px solid #405b84;
-      }
-    }
+  position: relative;
+  color: #405b84;
+  min-height: calc(100vh - 81.6px);
+  .swiper-container {
+    height: calc(100vh - 81.6px);
   }
 }
 </style>
