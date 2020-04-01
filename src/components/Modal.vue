@@ -18,6 +18,7 @@ export default {
 <style lang="scss" >
 .modal {
   position: absolute;
+  z-index: 5;
   width: 95%;
   height: 95%;
   background-color: white;

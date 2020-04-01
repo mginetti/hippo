@@ -25,15 +25,17 @@ export default {
   justify-content: center;
   .title {
     text-align: center;
-    margin-bottom: 50px;
     h3 {
       margin-top: 0;
       margin-bottom: 10px;
     }
   }
   .logo {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
     img {
-      height: 110%;
+      width: 100%;
     }
   }
 }

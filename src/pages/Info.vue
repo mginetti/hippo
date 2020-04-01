@@ -5,7 +5,7 @@
     </router-link>
     <div class="website">
       <h3>Visita il nostro sito</h3>
-      <a href target="_blank">
+      <a href="https://mginetti.github.io/happy_hippo_landing/" target="_blank">
         <img src="img/icons/site.svg" alt />
       </a>
     </div>
@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
 .info-page {
-  height: 100vh;
+  height: calc(100vh - 81.6px);
   display: flex;
   flex-direction: column;
   justify-content: center;

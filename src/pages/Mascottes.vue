@@ -30,7 +30,7 @@ export default {
 <style lang="scss">
 .mascottes {
   color: #405b84;
-  height: 100vh;
+  height: calc(100vh - 81.6px);
   a {
     position: absolute;
     top: 10px;
@@ -48,9 +48,9 @@ export default {
   .carousel {
     min-height: 100%;
     ul {
-      height: 100vh;
+      height: calc(100vh - 81.6px);
       li {
-        height: 100vh;
+        height: calc(100vh - 81.6px);
       }
     }
     .carousel__indicators {

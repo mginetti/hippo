@@ -9,8 +9,16 @@ export default {
   name: "App",
   created() {
     if (this.$workbox) {
+      console.log(this.$workbox);
       this.$workbox.addEventListener("waiting", () => {
         this.showUpgradeUI = true;
+      });
+    }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.update();
+        }
       });
     }
   },

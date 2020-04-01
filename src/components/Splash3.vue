@@ -30,21 +30,22 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .image {
+    flex-basis: 40%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 100%;
+    }
+  }
   .text {
     text-align: center;
+    margin-top: 25px;
     h3 {
       margin-top: 0;
       margin-bottom: 10px;
-    }
-  }
-  .image {
-    width: 100%;
-    max-height: 40vh;
-    text-align: center;
-    margin-bottom: 25px;
-    img {
-      height: 100%;
-      width: 80%;
     }
   }
 }

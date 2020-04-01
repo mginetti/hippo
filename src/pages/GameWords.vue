@@ -1,5 +1,6 @@
 <template>
   <div class="game-words">
+    <div class="back-game"></div>
     <navbar @pause="setPause()" v-if="!pause && !finish" game></navbar>
     <span v-if="!finish" class="score">Punteggio: {{points}}</span>
     <generate-phrase class="phrase"></generate-phrase>
@@ -12,6 +13,9 @@
     ></generate-btn>
     <modal v-if="finish" class="modal-finish">
       <template>
+        <div class="back">
+          <img src="../assets/back-finish.png" alt />
+        </div>
         <span class="score">{{score}}</span>
         <span class="record">{{record}}</span>
         <div class="action">
@@ -117,17 +121,33 @@ export default {
 
 <style lang="scss">
 .game-words {
-  height: 100vh;
+  .back-game {
+    border: 9px solid #f39322;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/paper.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  height: calc(100vh - 81.6px);
   padding-left: 10px;
   padding-right: 10px;
   .modal-pause {
     .back {
       position: absolute;
+      border-radius: 5px;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       img {
+        border-radius: 5px;
+
         height: 100%;
         width: 100%;
       }
@@ -140,10 +160,20 @@ export default {
     }
   }
   .modal-finish {
-    background-image: url("../assets/back-finish.png");
-    background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    .back {
+      position: absolute;
+      border-radius: 5px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img {
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+      }
+    }
     .score {
       position: absolute;
       top: 40%;
@@ -154,7 +184,7 @@ export default {
     }
     .record {
       position: absolute;
-      top: 62%;
+      top: 60%;
       left: 60%;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;

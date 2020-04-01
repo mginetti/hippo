@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     generatePhrase() {
-      return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
+      return "Scegli la parola giusta qua sotto...";
     }
   }
 };

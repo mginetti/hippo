@@ -27,19 +27,20 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .image {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
   .text {
     text-align: center;
     h3 {
       margin-top: 0;
       margin-bottom: 10px;
-    }
-  }
-  .image {
-    width: 100%;
-    margin-bottom: 50px;
-    text-align: center;
-    img {
-      width: 80%;
     }
   }
 }

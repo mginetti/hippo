@@ -35,6 +35,8 @@ export default {
 
 <style lang="scss">
 .login {
+  position: absolute;
+  z-index: 2;
   display: flex;
   height: 100%;
   width: 100%;
@@ -51,6 +53,7 @@ export default {
     }
   }
   .text {
+    flex-basis: 5%;
     text-align: center;
   }
   .form {
@@ -58,8 +61,10 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 25px;
+    width: 80%;
     ::placeholder {
       color: #405b84;
+      font-size: 20px;
     }
     input {
       margin-bottom: 25px;

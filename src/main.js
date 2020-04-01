@@ -5,10 +5,10 @@ import VueRouter from "vue-router";
 import routes from "./routes.js";
 import store from "./store.js";
 import "./assets/style.scss";
-import VueCarousel from "@chenfengyuan/vue-carousel";
-
-Vue.use(VueCarousel);
-
+import VueAwesomeSwiper from "vue-awesome-swiper";
+// import style
+import "swiper/css/swiper.css";
+Vue.use(VueAwesomeSwiper /* { default options with global component } */);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
